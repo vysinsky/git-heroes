@@ -1,0 +1,40 @@
+{
+  "name": "git-heroes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "format": "prettier --write \"**/*.{js,css,md}\"",
+    "posttest": "npm run format",
+    "now-build": "next build"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.1.3",
+    "@zeit/next-typescript": "^1.1.1",
+    "fast-glob": "^3.0.3",
+    "next": "^8.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@types/next": "^8.0.5",
+    "@types/react": "^16.8.22",
+    "husky": ">=1",
+    "lint-staged": ">=8",
+    "prettier": "^1.18.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
